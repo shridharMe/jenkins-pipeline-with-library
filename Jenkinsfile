@@ -26,8 +26,8 @@ pipeline {
                 }
         }
         stage ('terraform apply') {
-            when {
-                branch 'master';        
+           when {
+                expression { env.GIT_BRANCH == 'origin/master' }   
             }
             steps {
                   sh '''
