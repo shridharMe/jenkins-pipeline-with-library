@@ -27,7 +27,7 @@ pipeline {
         }
         stage ('terraform apply') {
             when {
-                expression { env.BRANCH== "master" }         
+                expression { env.BRANCH_NAME == "master" }         
             }
             steps {
                   sh '''
