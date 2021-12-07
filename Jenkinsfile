@@ -20,5 +20,28 @@ pipeline {
         }
         
     }
+        post { 
+        always {
+            script{
+                   echo " build cleanup "
+            }
+        }
+        success { 
+              script {
+                      sh '''
+
+                       echo " build successfull "
+                      '''
+                }
+        }
+        failure {
+            script {
+                    
+                      sh '''
+
+                       echo " build failed "
+                      '''
+             }
+        }
     
 }
