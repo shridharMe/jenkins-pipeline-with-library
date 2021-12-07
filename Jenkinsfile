@@ -13,9 +13,7 @@ pipeline {
         stage ("start"){
             steps {
                 script{
-                    standardPipeline(ENV_NAME: params.ENV_NAME,
-                                     SQUAD_NAME: params.SQUAD_NAME
-                                    )
+                    standardPipeline
                 }
             
             }
