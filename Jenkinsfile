@@ -12,7 +12,10 @@ pipeline {
     stages{
         stage ("start"){
             steps {
-            standardPipeline
+                script{
+                    standardPipeline
+                }
+            
             }
         }
         
