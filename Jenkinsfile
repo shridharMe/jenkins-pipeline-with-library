@@ -1,4 +1,5 @@
 pipeline {
+    @Library('pipeline-library-demo')_
     agent  any
     options {
         buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '14'))
@@ -9,6 +10,11 @@ pipeline {
         SQUAD_NAME               = "devops"
     }
     stages {
+           stage ('library call) {
+            steps {
+                    terraformPipeline "devops"
+                }
+        }
         stage ('terraform init') {
             steps {
                   sh '''
