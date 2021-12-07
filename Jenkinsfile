@@ -12,7 +12,10 @@ pipeline {
     stages {
            stage ('library call) {
             steps {
-                    terraformPipeline "devops"
+                script{
+                     terraformPipeline 'devops'
+                }
+                   
                 }
         }
         stage ('terraform init') {
