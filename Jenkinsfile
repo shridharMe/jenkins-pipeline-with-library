@@ -9,5 +9,8 @@ pipeline {
         ENV_NAME                 = "dev" 
         SQUAD_NAME               = "devops"
     }
-    standardPipeline
+    stages{
+        standardPipeline
+    }
+    
 }
