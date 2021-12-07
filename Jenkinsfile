@@ -11,7 +11,9 @@ pipeline {
     }
     stages{
         stage ("start"){
+            steps {
             standardPipeline
+            }
         }
         
     }
