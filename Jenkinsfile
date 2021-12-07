@@ -5,7 +5,7 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '14'))
         timestamps()
     }
-    environment { 
+    parameters { 
         ENV_NAME                 = "dev" 
         SQUAD_NAME               = "devops"
     }
@@ -13,7 +13,9 @@ pipeline {
         stage ("start"){
             steps {
                 script{
-                    standardPipeline
+                    standardPipeline(ENV_NAME: params.ENV_NAME,
+                                     SQUAD_NAME: params.SQUAD_NAME
+                                    )
                 }
             
             }
