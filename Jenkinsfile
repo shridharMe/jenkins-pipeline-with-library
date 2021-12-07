@@ -10,7 +10,7 @@ pipeline {
         SQUAD_NAME               = "devops"
     }
     stages {
-           stage ('library call) {
+           stage ('library call') {
             steps {
                 script{
                      terraformPipeline 'devops'
