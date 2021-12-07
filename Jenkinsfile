@@ -10,7 +10,10 @@ pipeline {
         SQUAD_NAME               = "devops"
     }
     stages{
-        standardPipeline
+        stage ("start"){
+            standardPipeline
+        }
+        
     }
     
 }
