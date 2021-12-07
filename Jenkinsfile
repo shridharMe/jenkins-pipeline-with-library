@@ -1,5 +1,5 @@
+@Library('pipeline-library-demo')_
 pipeline {
-    @Library('pipeline-library-demo')_
     agent  any
     options {
         buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '14'))
