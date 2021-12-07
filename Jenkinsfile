@@ -6,8 +6,8 @@ pipeline {
         timestamps()
     }
     parameters { 
-        ENV_NAME                 = "dev" 
-        SQUAD_NAME               = "devops"
+        choice(choices: 'dev', description: 'Select the env to deploy', name: 'ENV_NAME')
+        choice(choices: 'devops', description: 'Select the team to deploy', name: 'SQUAD_NAME')
     }
     stages{
         stage ("start"){
